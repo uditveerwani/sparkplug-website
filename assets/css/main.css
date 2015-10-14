@@ -2107,7 +2107,7 @@ button,
 
 /* Header */
 #header {
-  padding: 9em 0 9em 0 ;
+  padding: 3em 0 3em 0 ;
   background-color: #4686a0;
   color: rgba(255, 255, 255, 0.75);
   background-attachment: fixed,							fixed,							fixed;
@@ -2174,6 +2174,8 @@ button,
   #header h1 {
     margin: 0; }
   #header p {
+    font-size: 1.2em;
+    line-height: 1.5em;
     margin: 1em 0 0 0; }
   #header .actions {
     margin: 2.5em 0 0 0;
@@ -2247,12 +2249,28 @@ body.is-loading #header:after {
 
 #register {
   padding: 4em 0 4em 0; }
+  #register form {
+    margin-bottom: 0; }
   #register .actions {
     margin-bottom: 0; }
-    #register .actions > div {
-      display: inline-block; }
-      #register .actions > div input {
-        font-size: 0.9em; }
+    #register .actions > .form-field-group {
+      display: table;
+      margin: 0 auto 20px; }
+      #register .actions > .form-field-group > .form-field {
+        float: left;
+        padding: 0 10px; }
+        #register .actions > .form-field-group > .form-field input {
+          font-size: 0.9em; }
+          #register .actions > .form-field-group > .form-field input[type="password"] {
+            letter-spacing: 5px; }
+            #register .actions > .form-field-group > .form-field input[type="password"]::-webkit-input-placeholder {
+              letter-spacing: 0; }
+            #register .actions > .form-field-group > .form-field input[type="password"]:-moz-placeholder {
+              letter-spacing: 0; }
+            #register .actions > .form-field-group > .form-field input[type="password"]::-moz-placeholder {
+              letter-spacing: 0; }
+            #register .actions > .form-field-group > .form-field input[type="password"]:-ms-input-placeholder {
+              letter-spacing: 0; }
     #register .actions .button {
       position: relative;
       top: 1px;
@@ -2266,7 +2284,7 @@ body.is-loading #header:after {
 
 /* Footer */
 #footer {
-  padding: 6em 0 6em 0 ;
+  padding: 3em 0 3em 0 ;
   background-color: #4686a0;
   color: rgba(255, 255, 255, 0.75);
   background-attachment: fixed,							fixed,							fixed;
@@ -2352,9 +2370,7 @@ body.is-loading #header:after {
   body, input, select, textarea {
     font-size: 14pt; }
 
-  /* Header */
-  #header {
-    padding: 6em 0 6em 0 ; } }
+  /* Header */ }
 /* Large */
 @media screen and (max-width: 1140px) {
   /* Basic */
@@ -2380,14 +2396,12 @@ body.is-loading #header:after {
 
   /* Header */
   #header {
-    padding: 5em 0 5em 0 ;
     background-attachment: scroll; }
     #header br {
       display: inline; }
 
   /* Footer */
   #footer {
-    padding: 4em 0 4em 0 ;
     background-attachment: scroll; } }
 /* Medium */
 @media screen and (max-width: 980px) {

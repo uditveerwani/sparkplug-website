@@ -41,27 +41,35 @@
 			});
 
 		// Scrolly.
-		// $('.scrolly').scrolly();
+			$('.scrolly').scrolly();
 
 		// Registration function
 
-		$register = $('#register');
+			$register = $('#register');
 
-		$registerForm = $register.find('form');
-		$registerInput = $register.find('input');
-		$registerSubmit = $register.find('button');
+			$registerForm = $register.find('form');
+			$registerInput = $register.find('input');
+			$registerSubmit = $register.find('button');
 
-		$registerInput.on('change keyup', function(){
-			if ($(this).is(':valid')) {
-				$registerSubmit.removeAttr('disabled');
-			}else{
-				$registerSubmit.attr('disabled', 'disabled');
-			}
-		});
+			$registerInput.on('change keyup', function(){
+				var invalid = null;
 
-		$registerForm.on('submit', function(e){
-			e.preventDefault();
-		});
+				$registerInput.each(function(){
+					if (!$(this).is(':valid') && invalid === null) {
+						invalid = true;
+					}
+				});
+
+				if (invalid) {
+					$registerSubmit.attr('disabled', 'disabled');
+				}else{
+					$registerSubmit.removeAttr('disabled');
+				}
+			});
+
+			$registerForm.on('submit', function(e){
+				e.preventDefault();
+			});
 
 	});
 
