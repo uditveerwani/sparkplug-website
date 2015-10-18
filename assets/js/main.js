@@ -48,7 +48,7 @@
 			$register = $('#register');
 
 			$registerForm = $register.find('form');
-			$registerInput = $register.find('input');
+			$registerInput = $register.find('input[type="email"], input[type="password"]');
 			$registerSubmit = $register.find('button');
 
 			$registerInput.on('change keyup', function(){
@@ -68,7 +68,7 @@
 			});
 
 			$registerForm.on('submit', function(e){
-				e.preventDefault();
+				$registerSubmit.addClass('loading');
 			});
 
 	});

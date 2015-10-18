@@ -42,6 +42,10 @@
 
 /* Basic */
 
+	*, *:focus{
+		outline: none;
+	}
+
 	body {
 		background: _palette(bg);
 
@@ -1087,6 +1091,28 @@
 
 					-webkit-user-select: none;
 					user-select: none;
+				}
+
+
+				.loader{
+					display: none;
+					padding: 2px 0 0;
+
+					@include loader(#4686a0);
+				}
+
+				&.loading{
+					opacity: 0.9;
+					pointer-events: none;
+					cursor: default;
+
+					.loading-text{
+						display: none;
+					}
+
+					.loader{
+						display: block;
+					}
 				}
 			}
 		}
